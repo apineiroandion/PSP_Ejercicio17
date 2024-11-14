@@ -22,6 +22,11 @@ public class HiloCoches extends Thread{
             System.out.println("Error en el hilo" + e.getMessage());
         }
         parking.salirParking(coche);
+        try {
+            sleep(Math.round(Math.random() * 10000));
+        } catch (InterruptedException e) {
+            System.out.println("Error en el hilo" + e.getMessage());
+        }
         ejecutar();
     }
 
