@@ -1,27 +1,14 @@
 package app.parking;
 
 public class Coche {
-    private String nombre;
-    private Boolean aparcado;
+    private final String NOMBRE;
 
-    public Coche(String nombre, Boolean aparcado) {
-        this.nombre = nombre;
-        this.aparcado = aparcado;
+    public Coche(String nombre) {
+        this.NOMBRE = nombre;
     }
 
     public String getNombre() {
-        return nombre;
+        return NOMBRE;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public Boolean getAparcado() {
-        return aparcado;
-    }
-
-    public void setAparcado(Boolean aparcado) {
-        this.aparcado = aparcado;
-    }
 }

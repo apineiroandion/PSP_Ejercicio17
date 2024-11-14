@@ -1,33 +1,34 @@
 package app.parking;
 
 public class HiloCoches extends Thread{
-    private Coche coche;
-    private Parking parking;
+    private final Coche coche;
+    private final Parking PARKING;
 
     public HiloCoches(Coche coche, Parking parking){
         this.coche = coche;
-        this.parking = parking;
+        this.PARKING = parking;
     }
 
     @Override
     public void run(){
-        ejecutar();
+        while (true){
+            ejecutar();
+        }
     }
 
     public void ejecutar(){
-        parking.entrarParking(coche);
+        PARKING.entrarParking(coche);
         try {
             sleep(Math.round(Math.random() * 10000));
         } catch (InterruptedException e) {
             System.out.println("Error en el hilo" + e.getMessage());
         }
-        parking.salirParking(coche);
+        PARKING.salirParking(coche);
         try {
             sleep(Math.round(Math.random() * 10000));
         } catch (InterruptedException e) {
             System.out.println("Error en el hilo" + e.getMessage());
         }
-        ejecutar();
     }
 
 
